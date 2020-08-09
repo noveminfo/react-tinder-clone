@@ -1,24 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header/Header';
+import TinderCards from './components/TinderCards/TinderCards';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
+import SwipeButtons from './components/SwipeButtons/SwipeButtons';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Switch>
+          <Route path='/chat'>
+            <Header backButton='/' />
+            <h1>I am the chat page</h1>
+          </Route>
+          <Route path='/'>
+            <Header />
+            <TinderCards />
+            <SwipeButtons />
+          </Route>
+        </Switch>
+      </Router>
+
+
+      {/* Tinder Cards */}
+      {/* Buttons below tinder cards */}
+
+      {/* Chats screen */}
+      {/* Individual chat screen */}
+
     </div>
   );
 }
