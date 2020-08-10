@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import TinderCard from 'react-tinder-card';
-import database from '../../firebase/firebase';
-import './TinderCards.css';
+import React, { useState, useEffect } from 'react'
+import TinderCard from 'react-tinder-card'
+import database from '../../firebase/firebase'
+import './TinderCards.css'
 
-function TinderCards() {
-  const [people, setPeople] = useState([]);
+function TinderCards () {
+  const [people, setPeople] = useState([])
 
   useEffect(() => {
     database
       .collection('people')
       .onSnapshot(snapshot =>
         setPeople(snapshot.docs.map(doc => doc.data()))
-      );
-  }, []);
+      )
+  }, [])
 
   return (
     <div className='tinderCards__cardContainer'>
@@ -31,7 +31,7 @@ function TinderCards() {
         </TinderCard>
       ))}
     </div>
-  );
+  )
 }
 
-export default TinderCards;
+export default TinderCards

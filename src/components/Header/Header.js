@@ -1,15 +1,16 @@
-import React from 'react';
-import PersonIcon from '@material-ui/icons/Person';
-import ModeCommentIcon from '@material-ui/icons/ModeComment';
-import IconButton from '@material-ui/core/IconButton';
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import { Link, useHistory } from 'react-router-dom';
+import React from 'react'
+import PersonIcon from '@material-ui/icons/Person'
+import ModeCommentIcon from '@material-ui/icons/ModeComment'
+import IconButton from '@material-ui/core/IconButton'
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos'
+import { Link, useHistory } from 'react-router-dom'
 
-import logo from '../../share/icon/fire.svg';
-import './Header.css';
+import logo from '../../share/icon/fire.svg'
+import './Header.css'
 
-function Header({ backButton }) {
-  const history = useHistory();
+// eslint-disable-next-line react/prop-types
+function Header ({ backButton }) {
+  const history = useHistory()
 
   return (
     <div className='header'>
@@ -18,10 +19,10 @@ function Header({ backButton }) {
           <ArrowBackIosIcon fontSize='large' className='header__icon' />
         </IconButton>
       ) : (
-          <IconButton>
-            <PersonIcon className='header__icon' fontSize='large' />
-          </IconButton>
-        )}
+        <IconButton>
+          <PersonIcon className='header__icon' fontSize='large' />
+        </IconButton>
+      )}
       <Link to='/'>
         <img
           className='header__logo'
@@ -38,5 +39,4 @@ function Header({ backButton }) {
   )
 }
 
-
-export default Header;
+export default Header
